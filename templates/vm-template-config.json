@@ -1,0 +1,37 @@
+{
+    "description": "Configuration template pour nouvelles VMs",
+    "defaults": {
+        "vcenter": {
+            "server": "vcenter.entreprise.com",
+            "username": "CHANGEME",
+            "password": "CHANGEME"
+        },
+        "vm_parameters": {
+            "template": "CHANGEME",
+            "name": "Nouvelle-VM-01",
+            "folder": "Templates",
+            "cpu": {
+                "count": 2,
+                "cores_per_socket": 1
+            },
+            "memory_gb": 4,
+            "disk_gb": 40,
+            "network": {
+                "name": "VLAN_DEFAULT",
+                "ip_address": "192.168.1.100",
+                "subnet_mask": "255.255.255.0",
+                "gateway": "192.168.1.1",
+                "dns_servers": ["8.8.8.8"]
+            }
+        },
+        "infrastructure": {
+            "cluster": "Cluster01",
+            "datastore": "DS01",
+            "resource_pool": "Resources"
+        }
+    },
+    "notes": [
+        "Remplacer toutes les valeurs 'CHANGEME' avant utilisation",
+        "Pour les mots de passe, utiliser un système de gestion des secrets"
+    ]
+}
